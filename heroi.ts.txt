@@ -1,0 +1,24 @@
+class Heroi{
+nome:string
+forca:number
+nivel:number
+
+constructor(nome:string,forca:number){
+    this:nome=nome
+    this:forca=forca
+    this:nivel=1
+}
+ 
+olharDestemido(){
+    console.log("olharDestemido!!")
+}
+
+} let heroi1=new Heroi("perseu",1900)
+    console.log(heroi1)
+
+    let heroi2= new Heroi("atlas",900)
+    heroi2.nivel=10000
+    console.log(heroi2)
+
+
+
