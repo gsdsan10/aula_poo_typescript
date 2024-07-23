@@ -6,9 +6,9 @@ forca:number
 nivel:number
 
 constructor(nome:string,forca:number){
-    this:nome=nome
-    this:forca=forca
-    this:nivel=1
+    this.nome=nome
+    this.forca=forca
+    this.nivel=1
 }
  
 olharDestemido(){
