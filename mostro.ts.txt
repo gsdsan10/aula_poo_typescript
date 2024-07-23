@@ -1,0 +1,21 @@
+class Mostro{
+    nome:string
+    forca:number
+    altura:number
+
+  constructor(nome:string,forca:number){
+        this.nome=nome
+        this.forca=forca
+        this.altura=25
+    }
+
+       olharassustador(){
+        console.log("Mostrodestemido")
+    }
+
+     } let mostro1=new Mostro ("perseu",1900)
+    console.log(mostro1)
+
+    let mostro2= new Mostro("atlas",900)
+    mostro2.altura=10000
+    console.log(mostro2)
