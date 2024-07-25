@@ -1,0 +1,44 @@
+ abstract class  Personagem {
+ public nome: string 
+ public forca:number 
+ public nivel: number
+ public vida : number
+
+constructor( nome:string,forca:number,vida:number){
+  this.nome=nome
+  this.forca=forca
+  this.vida=vida
+   this.nivel=1
+}
+  abstract olhar():void
+
+} 
+   class Heroi extends Personagem{
+
+  comportamento:string 
+
+  constructor(nome:string,forca:number,vida:number,comportamento:string){
+   super(nome,vida,forca)
+   this.comportamento=comportamento
+
+  }  
+
+  olhar(){
+    console.log("olhar destemido")
+  }
+}
+
+let heroi1 = new Heroi("toni",100,100,"fraco")
+console.log(heroi1)
+
+
+let heroi2 = new Heroi("tonho",500,900,"bomzinho")
+console.log(heroi2)
+
+
+
+class Monstro extends Personagem{
+ 
+
+ }
+
