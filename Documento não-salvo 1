@@ -1,44 +1,125 @@
- abstract class  Personagem {
- public nome: string 
- public forca:number 
- public nivel: number
- public vida : number
+abstract class Personagem{
 
-constructor( nome:string,forca:number,vida:number){
-  this.nome=nome
-  this.forca=forca
-  this.vida=vida
-   this.nivel=1
-}
-  abstract olhar():void
+   
+ protected abstract emoji :string; 
 
-} 
-   class Heroi extends Personagem{
 
-  comportamento:string 
+    public nome: string
+    protected acessorios : Acessorio[] = []
+    private altura: number
+    private elementos: string
+    private velocidade: number
+    private cor : string
+    private nivel:number
+    private evolucao: string
+    private alcance : string
 
-  constructor(nome:string,forca:number,vida:number,comportamento:string){
-   super(nome,vida,forca)
-   this.comportamento=comportamento
+    constructor(nome:string,altura:number,elementos:string,velocidade:number,acessorios:Acessorio,cor:string,nivel:number,evolucao:string,alcance:string)
+    {
+        this.nome = nome
+        this.acessorios = acessorios
+        this.altura=altura
+        this.cor = cor
+        this.elementos= elementos
+        this.velocidade= velocidade
+        this.nivel= nivel
+        this.evolucao=evolucao
+        this.alcance=al
 
-  }  
+    }
 
-  olhar(){
-    console.log("olhar destemido")
+    public getAcessorios():void{
+
+        let contador = 0
+        for(let item of  this.acessorios){
+            console.log("Quais acessorios",item)
+            contador ++
+        }
+        console.log("Quantidade de Acessório:",contador)
+    }
+
+    public setAcessorios(acessorios : Acessorio):void{
+        this.acessorios.push(acessorios)
+    }
+
+    public removeAcessorios(): Acessorio | null{
+        let acessorio  =  this.acessorios.pop()
+        if(acessorio) return acessorio
+        return null
+    }
+
+     //métodos acessores + - #
+     public getNivel(): number{
+        return this.nivel
+    }
+
+    public setNivel(nivel:number){
+        this.nivel += nivel
+    }
+
+    public getEvolucao(): string{
+        return this.evolucao
+    }
+
+    public setAlcance(alcance:string): void{
+        this.alcance = alcance
+    }
+
+
+     atacar(persona: Personagem) : void{
+        personagem.perderVida(this.forca)
+        console.log(`${this.emoji} ${this.nome} está atacando... ${this.forca}`)
+        this.moeda += personagem.dano()
+     }
+
+    private perderVida(forcaAtaque: num): number {
+      return  this.vida -= forcaAtaque
+
+     }
+
+    private dano():number{
+        if(this.vida >){
+            console.log(`${this.emoji} ${this.nome} agora tem ${this.vida} de vida...`)
+            return 0
+        } else{
+            this.morte()
+            return Calcular.geraValor(100)
+        }
+   }
+
+   vitoria {
+    if(this.atacando =true){
+        console.log(this.nome,"Vitória")
+    }
   }
+
+
+    abstract correr():void
+
+    abstract getEmoji():void
+
+    abstract morte(): void
+
+
+
+    andar(){
+        console.log("andando!!!")
+    }
+
+    voar(){
+        console.log("voando!!!")
+    }
+
+   
 }
 
-let heroi1 = new Heroi("toni",100,100,"fraco")
-console.log(heroi1)
+class Acessorio{
 
+nome:string
 
-let heroi2 = new Heroi("tonho",500,900,"bomzinho")
-console.log(heroi2)
-
-
-
-class Monstro extends Personagem{
- 
-
- }
+constructor(nome:string){
+  this.nome: nome
+  
+}
+}
 
